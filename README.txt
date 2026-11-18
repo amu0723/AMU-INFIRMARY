@@ -1,13 +1,9 @@
-AMU INFIRMARY v4
+AMU INFIRMARY v6 - iPhone / GitHub Pages
+1. Extract this ZIP in the iPhone Files app.
+2. Upload the new index.html to the existing AMU-INFIRMARY GitHub repository, replacing index.html.
+3. Commit the change. The public URL remains https://amu0723.github.io/AMU-INFIRMARY/
 
-1. GitHubリポジトリの既存 index.html を、このZIP内の index.html で置き換えてください。
-2. コミット後、GitHub Pagesの反映を待って同じURLを開いてください。
-
-v4の変更：
-- 関係性のA/Bを登録済みキャラクターから選択
-- 関係性をキャラクター画像・名前付きのペアカードで表示
-- 音楽の関連キャラクターを複数選択
-- 音楽一覧に関連キャラクターの名前・画像を表示
-- v2/v3と同じIndexedDB保存先を継続使用
-
-注意：更新前にブラウザのサイトデータを削除しないでください。念のため設定からバックアップを取ることをおすすめします。
+IMPORTANT:
+- This update keeps the existing IndexedDB database name (amu_infirmary_v2) and store (data), so saved records should remain available in the same browser.
+- Do not clear website data or browser storage.
+- This ZIP does not publish itself; upload and commit index.html on GitHub.
