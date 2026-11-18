@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#eaf5fb">
+<title>AMU INFIRMARY</title>
+<style>
+:root{--ink:#36566b;--muted:#8199a9;--blue:#78a9c5;--line:#dce9f0;--paper:#fff;--bg:#f2f7fa;--pale:#eaf4f9;--paler:#f7fbfd;--shadow:0 8px 24px #789bb414}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;font-size:14px}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.shell{max-width:900px;margin:auto;min-height:100vh;background:var(--paler);padding-bottom:88px}
+.top{padding:calc(18px + env(safe-area-inset-top)) 20px 16px;background:linear-gradient(135deg,#e8f4fa,#f8fbfd);border-bottom:1px solid var(--line)}
+.brandrow{display:flex;align-items:center;justify-content:space-between}.brand{font-size:19px;letter-spacing:.12em;font-weight:750;color:#47718b}.sub{font-size:9px;letter-spacing:.19em;color:#8aa7b8;margin-top:4px}.cross{width:36px;height:36px;border:1px solid #cfe0e9;border-radius:12px;display:grid;place-items:center;color:#79a9c3;font-size:24px;background:#ffffffa8}
+main{padding:18px 16px}.welcome{background:linear-gradient(120deg,#e4f1f8,#f4f9fc);border:1px solid #d8e8f0;border-radius:18px;padding:18px;margin-bottom:18px}.eyebrow{font-size:10px;letter-spacing:.16em;color:#86a5b7}.welcome h1{font-size:21px;letter-spacing:.04em;margin:8px 0 5px;color:#426c86}.welcome p{margin:0;color:#7893a4;font-size:12px;line-height:1.7}
+.sectionhead{display:flex;align-items:end;justify-content:space-between;margin:20px 2px 12px}.sectionhead h2{font-size:16px;margin:0}.sectionhead small{color:var(--muted);font-size:10px;letter-spacing:.1em}
+.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}.tile{border:1px solid var(--line);border-radius:15px;background:white;padding:15px;text-align:left;box-shadow:var(--shadow);color:var(--ink);min-height:104px}.tile .ico{font-size:22px;color:#75a6c1}.tile b{display:block;margin-top:10px;font-size:13px}.tile small{display:block;color:var(--muted);font-size:9px;letter-spacing:.12em;margin-top:3px}
+.panel{background:white;border:1px solid var(--line);border-radius:16px;padding:15px;box-shadow:var(--shadow)}
+.row{display:flex;align-items:center;gap:10px}.between{justify-content:space-between}.muted{color:var(--muted)}.small{font-size:11px}
+.btn{border:0;background:#6f9fba;color:white;border-radius:12px;padding:11px 15px;font-weight:650}.btn.secondary{background:#edf5f9;color:#52758b;border:1px solid #dceaf1}.btn.danger{background:#fff0f0;color:#ad6868;border:1px solid #f0dada}.btn.full{width:100%}
+input,textarea,select{width:100%;border:1px solid #dce8ef;border-radius:11px;padding:11px 12px;background:#fbfdfe;color:var(--ink);outline:none}textarea{min-height:86px;resize:vertical}label{display:block;font-size:11px;color:#6d899c;margin:13px 0 6px;font-weight:650}.search{margin:12px 0}
+.cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.charcard{border:1px solid var(--line);border-radius:15px;background:white;overflow:hidden;box-shadow:var(--shadow);text-align:left;color:var(--ink);padding:0}.portrait{height:142px;background:linear-gradient(135deg,#eaf4f9,#f8fbfd);display:grid;place-items:center;overflow:hidden;color:#9bb6c6;font-size:30px}.portrait img{width:100%;height:100%;object-fit:cover}.cardbody{padding:11px}.cardbody b{font-size:13px;display:block}.cardbody small{color:var(--muted);font-size:10px}.tag{display:inline-block;background:#edf5f9;color:#668ba1;border-radius:20px;padding:4px 8px;font-size:10px;margin:6px 3px 0 0}
+.empty{text-align:center;padding:32px 12px;color:#8ba4b3}.empty .big{font-size:32px;margin-bottom:8px}
+.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.field.fullfield{grid-column:1/-1}
+.gallery{display:flex;gap:8px;overflow:auto;margin-top:10px}.gallery img{width:92px;height:92px;object-fit:cover;border-radius:12px;border:1px solid var(--line)}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(900px,100%);padding:9px 12px calc(9px + env(safe-area-inset-bottom));background:#ffffffed;backdrop-filter:blur(12px);border-top:1px solid var(--line);display:flex;justify-content:space-around;z-index:5}.navbtn{border:0;background:none;color:#8ba2b1;font-size:10px;display:grid;gap:3px;justify-items:center;padding:4px 9px}.navbtn span{font-size:19px}.navbtn.active{color:#4e819f;font-weight:700}
+.hidden{display:none!important}.back{border:0;background:none;color:#6794ad;padding:4px 0 12px;font-weight:650}.detailhero{display:flex;gap:14px;align-items:center}.detailhero .portrait{width:112px;height:128px;border-radius:14px;flex-shrink:0}.detailhero h2{margin:0 0 5px;font-size:20px}.detailsection{margin-top:13px}.detailsection h3{font-size:12px;color:#7395aa;border-bottom:1px solid var(--line);padding-bottom:7px;margin:0 0 8px;letter-spacing:.08em}.detailval{white-space:pre-wrap;line-height:1.75;font-size:13px}
+.toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);background:#456d85;color:white;padding:10px 16px;border-radius:30px;font-size:12px;z-index:20;box-shadow:var(--shadow)}
+@media(min-width:650px){main{padding:24px}.tiles{grid-template-columns:repeat(3,1fr)}.cards{grid-template-columns:repeat(3,1fr)}.portrait{height:175px}}
+</style>
+</head>
+<body>
+<div class="shell">
+<header class="top"><div class="brandrow"><div><div class="brand">AMU INFIRMARY</div><div class="sub">CREATIVE MEDICAL ARCHIVE</div></div><div class="cross">＋</div></div></header>
+<main id="app"></main>
+<nav class="bottom">
+<button class="navbtn active" data-nav="home"><span>⌂</span>受付</button>
+<button class="navbtn" data-nav="characters"><span>♙</span>患者名簿</button>
+<button class="navbtn" data-nav="archive"><span>▤</span>資料室</button>
+<button class="navbtn" data-nav="settings"><span>⚙</span>設定</button>
+</nav>
+</div>
+<div id="toast" class="toast hidden"></div>
+<input id="imagePicker" type="file" accept="image/*" multiple hidden>
+<script>
+const DB_NAME='amu-infirmary-db', STORE='characters';
+let db, page='home', currentId=null, draftImages=[];
+const fields=[
+ ['reading','読み方'],['alias','別名'],['gender','性別'],['age','年齢'],['birthday','誕生日'],
+ ['height','身長'],['species','種族'],['occupation','職業・所属'],['hair','髪・髪色'],['eyes','目・瞳'],['appearance','外見・服装'],
+ ['personality','性格'],['speech','口調・一人称'],['likes','好きなもの'],['dislikes','苦手なもの'],
+ ['ability','能力・特技'],['past','過去・生い立ち'],['secret','秘密'],['notes','備考・自由設定']
+];
+function openDB(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,1);req.onupgradeneeded=()=>req.result.createObjectStore(STORE,{keyPath:'id'});req.onsuccess=()=>{db=req.result;resolve()};req.onerror=()=>reject(req.error)})}
+function tx(mode='readonly'){return db.transaction(STORE,mode).objectStore(STORE)}
+function allChars(){return new Promise((res,rej)=>{let r=tx().getAll();r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function saveChar(c){return new Promise((res,rej)=>{let r=tx('readwrite').put(c);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+function deleteChar(id){return new Promise((res,rej)=>{let r=tx('readwrite').delete(id);r.onsuccess=()=>res();r.onerror=()=>rej(r.error)})}
+function esc(s=''){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function toast(s){let t=document.getElementById('toast');t.textContent=s;t.classList.remove('hidden');setTimeout(()=>t.classList.add('hidden'),2100)}
+function setNav(){document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.nav===page))}
+function go(p){page=p;setNav();render()}
+function imgURL(blob){return blob?URL.createObjectURL(blob):''}
+async function render(){
+ const root=document.getElementById('app');setNav();
+ if(page==='home'){let chars=await allChars();root.innerHTML=`
+ <section class="welcome"><div class="eyebrow">FRONT DESK / 総合受付</div><h1>おかえりなさい。</h1><p>あなたの創作資料を保管・管理する個人専用施設です。<br>本日の記録を確認してください。</p></section>
+ <div class="sectionhead"><h2>受付窓口</h2><small>DEPARTMENTS</small></div>
+ <div class="tiles">
+ <button class="tile" onclick="go('characters')"><div class="ico">♙</div><b>患者名簿</b><small>CHARACTERS · ${chars.length} RECORDS</small></button>
+ <button class="tile" onclick="toast('関係性管理は次回の更新で追加予定です')"><div class="ico">⌘</div><b>関係性記録</b><small>RELATIONS</small></button>
+ <button class="tile" onclick="toast('世界観管理は次回の更新で追加予定です')"><div class="ico">◎</div><b>世界観資料室</b><small>WORLDS</small></button>
+ <button class="tile" onclick="toast('Spotify連携は次回の更新で追加予定です')"><div class="ico">♫</div><b>音楽保管室</b><small>MUSIC</small></button>
+ <button class="tile" onclick="go('archive')"><div class="ico">▤</div><b>資料保管庫</b><small>ARCHIVE</small></button>
+ <button class="tile" onclick="go('settings')"><div class="ico">⚙</div><b>システム管理</b><small>SETTINGS</small></button>
+ </div>
+ <div class="sectionhead"><h2>最近の登録</h2><small>RECENT FILES</small></div>
+ ${chars.length?`<div class="cards">${chars.sort((a,b)=>b.updated-a.updated).slice(0,4).map(cardHTML).join('')}</div>`:`<div class="panel empty"><div class="big">＋</div><b>カルテはまだありません</b><p class="small">最初のキャラクターを登録してみましょう。</p><button class="btn" onclick="newCharacter()">新規カルテを作成</button></div>`}`;
+ } else if(page==='characters'){let chars=await allChars();root.innerHTML=`
+ <button class="back" onclick="go('home')">← 受付へ戻る</button>
+ <div class="sectionhead"><div><h2>患者名簿</h2><small>CHARACTER DIRECTORY</small></div><button class="btn" onclick="newCharacter()">＋ 新規登録</button></div>
+ <input class="search" id="search" placeholder="名前・タグで検索…" oninput="filterCards()">
+ <div id="charCards" class="cards">${chars.sort((a,b)=>b.updated-a.updated).map(cardHTML).join('')||'<div class="panel empty" style="grid-column:1/-1"><div class="big">♙</div><b>登録されたキャラクターはいません</b><p class="small">右上の「新規登録」からカルテを作成できます。</p></div>'}</div>`;
+ } else if(page==='form'){root.innerHTML=formHTML()}
+ else if(page==='detail'){let c=await getChar(currentId);if(!c){go('characters');return}root.innerHTML=detailHTML(c)}
+ else if(page==='archive'){root.innerHTML=`<button class="back" onclick="go('home')">← 受付へ戻る</button><div class="sectionhead"><div><h2>資料保管庫</h2><small>ARCHIVE</small></div></div><div class="panel"><div class="empty"><div class="big">▤</div><b>資料保管庫</b><p class="small">自由メモ・資料フォルダ機能は次回の更新で追加予定です。<br>現在はキャラクターごとのカルテに備考を保存できます。</p></div></div>`}
+ else if(page==='settings'){root.innerHTML=`<button class="back" onclick="go('home')">← 受付へ戻る</button><div class="sectionhead"><div><h2>システム管理</h2><small>SYSTEM SETTINGS</small></div></div><div class="panel"><h3>データ管理</h3><p class="small muted">登録したカルテをバックアップファイルとして書き出せます。</p><button class="btn full" onclick="backup()">バックアップを書き出す</button><label>バックアップファイルを復元</label><input type="file" id="restoreFile" accept=".json,application/json"><button class="btn secondary full" style="margin-top:10px" onclick="restore()">バックアップを読み込む</button><p class="small muted">※復元すると現在の登録内容に追加・上書きされます。大切なデータは先にバックアップしてください。</p></div><div class="panel" style="margin-top:12px"><h3>このアプリについて</h3><p class="small">AMU INFIRMARY · Prototype 0.1<br>データはこのブラウザ内に保存されます。ブラウザのデータ消去や端末変更で失われる場合があります。</p></div>`}
+}
+async function getChar(id){return new Promise((res,rej)=>{let r=tx().get(id);r.onsuccess=()=>res(r.result);r.onerror=()=>rej(r.error)})}
+function cardHTML(c){let src=c.images?.[0]?.data?imgURL(c.images[0].data):'';return `<button class="charcard" onclick="openDetail('${c.id}')"><div class="portrait">${src?`<img src="${src}">`:'♙'}</div><div class="cardbody"><b>${esc(c.name||'名称未設定')}</b><small>${esc(c.reading||c.species||'')}</small><div>${(c.tags||[]).slice(0,3).map(t=>`<span class="tag">#${esc(t)}</span>`).join('')}</div></div></button>`}
+function filterCards(){let q=document.getElementById('search').value.toLowerCase();document.querySelectorAll('#charCards .charcard').forEach(el=>el.classList.toggle('hidden',!el.innerText.toLowerCase().includes(q)))}
+function newCharacter(){currentId=null;draftImages=[];page='form';render()}
+async function editCharacter(id){let c=await getChar(id);currentId=id;draftImages=c.images||[];page='form';render()}
+async function openDetail(id){currentId=id;page='detail';render()}
+function formHTML(){let existing=null;return `<button class="back" onclick="go('characters')">← 名簿へ戻る</button><div class="sectionhead"><div><h2>${currentId?'カルテ編集':'新規カルテ'}</h2><small>MEDICAL RECORD</small></div></div><form id="charForm" class="panel" onsubmit="submitChar(event)">
+ <label>名前 *</label><input name="name" required placeholder="キャラクター名" id="f_name">
+ <label>タグ（カンマ区切り）</label><input name="tags" placeholder="人外, 不穏, 兄妹" id="f_tags">
+ <div class="sectionhead"><h2>基本・外見情報</h2><small>PROFILE</small></div><div class="formgrid">${fields.map(([k,n])=>`<div class="field ${['appearance','personality','speech','likes','dislikes','ability','past','secret','notes'].includes(k)?'fullfield':''}"><label>${n}</label>${['appearance','personality','speech','likes','dislikes','ability','past','secret','notes'].includes(k)?`<textarea name="${k}" placeholder="${n}を入力…"></textarea>`:`<input name="${k}" placeholder="${n}">`}</div>`).join('')}</div>
+ <div class="sectionhead"><h2>画像資料</h2><small>GALLERY</small></div><p class="small muted">複数枚登録できます。画像はこの端末内に保存されます。</p><input type="file" id="formImages" accept="image/*" multiple><div id="preview" class="gallery"></div>
+ <label>追加メモ</label><textarea name="extra" placeholder="自由に記録…"></textarea>
+ <button class="btn full" style="margin-top:18px" type="submit">カルテを保存する</button>
+ </form>`;
+}
+async function renderForm(){await render();if(currentId){let c=await getChar(currentId);let f=document.getElementById('charForm');if(!f)return;Object.entries(c).forEach(([k,v])=>{if(f.elements[k]&&typeof v==='string')f.elements[k].value=v});f.elements.tags.value=(c.tags||[]).join(', ');showPreviews()}else showPreviews()}
+async function showPreviews(){let p=document.getElementById('preview');if(!p)return;p.innerHTML=draftImages.map(x=>`<img src="${imgURL(x.data)}" alt="${esc(x.name)}">`).join('')}
+async function submitChar(e){e.preventDefault();let f=e.target, data=Object.fromEntries(new FormData(f).entries());let old=currentId?await getChar(currentId):null;let c={...(old||{}),id:currentId||crypto.randomUUID(),...data,tags:data.tags.split(',').map(x=>x.trim()).filter(Boolean),images:draftImages,updated:Date.now(),created:old?.created||Date.now()};delete c.tagsText;await saveChar(c);toast('カルテを保存しました');currentId=c.id;page='detail';render()}
+document.addEventListener('change',e=>{if(e.target.id==='formImages'){[...e.target.files].forEach(file=>{let r=new FileReader();r.onload=()=>{fetch(r.result).then(x=>x.blob()).then(blob=>{draftImages.push({name:file.name,data:blob});showPreviews()})};r.readAsDataURL(file)})}});
+async function detailHTML(c){return ''}
+function detailHTML(c){let main=c.images?.[0]?.data?`<img src="${imgURL(c.images[0].data)}">`:'♙';return `<button class="back" onclick="go('characters')">← 患者名簿へ戻る</button><div class="panel"><div class="detailhero"><div class="portrait">${main}</div><div><div class="eyebrow">PATIENT RECORD</div><h2>${esc(c.name)}</h2><div class="muted small">${esc(c.reading||'')}</div>${(c.tags||[]).map(t=>`<span class="tag">#${esc(t)}</span>`).join('')}</div></div>${c.images?.length>1?`<div class="gallery">${c.images.slice(1).map(i=>`<img src="${imgURL(i.data)}">`).join('')}</div>`:''}<div class="row between" style="margin-top:16px"><button class="btn" onclick="editCharacter('${c.id}')">カルテを編集</button><button class="btn danger" onclick="removeCharacter('${c.id}')">削除</button></div></div>
+ ${fields.map(([k,n])=>c[k]?`<div class="panel detailsection"><h3>${esc(n)}</h3><div class="detailval">${esc(c[k])}</div></div>`:'').join('')}
+ ${c.extra?`<div class="panel detailsection"><h3>追加メモ</h3><div class="detailval">${esc(c.extra)}</div></div>`:''}
+ <div class="panel detailsection"><h3>登録情報</h3><div class="small muted">登録：${new Date(c.created).toLocaleString('ja-JP')}<br>最終更新：${new Date(c.updated).toLocaleString('ja-JP')}</div></div>`}
+async function removeCharacter(id){if(confirm('このカルテを削除しますか？')){await deleteChar(id);toast('カルテを削除しました');go('characters')}}
+async function backup(){let chars=await allChars();let out=[];for(let c of chars){let imgs=[];for(let i of c.images||[]){imgs.push({name:i.name,type:i.data.type,data:await blobToBase64(i.data)})}out.push({...c,images:imgs})}let blob=new Blob([JSON.stringify({app:'AMU INFIRMARY',version:1,exported:new Date().toISOString(),characters:out})],{type:'application/json'});download(blob,'amu-infirmary-backup.json');toast('バックアップを作成しました')}
+function blobToBase64(blob){return new Promise(res=>{let r=new FileReader();r.onload=()=>res(r.result.split(',')[1]);r.readAsDataURL(blob)})}
+function download(blob,name){let a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;a.click();URL.revokeObjectURL(a.href)}
+async function restore(){let f=document.getElementById('restoreFile').files[0];if(!f){toast('ファイルを選択してください');return}try{let data=JSON.parse(await f.text());if(!Array.isArray(data.characters))throw Error();for(let c of data.characters){c.images=(c.images||[]).map(i=>({...i,data:base64ToBlob(i.data,i.type)}));await saveChar(c)}toast('バックアップを復元しました');}catch(e){alert('バックアップを読み込めませんでした。ファイルを確認してください。')}}
+function base64ToBlob(b,t){let s=atob(b),a=new Uint8Array(s.length);for(let i=0;i<s.length;i++)a[i]=s.charCodeAt(i);return new Blob([a],{type:t||'image/jpeg'})}
+document.querySelectorAll('.navbtn').forEach(b=>b.addEventListener('click',()=>go(b.dataset.nav)));
+(async()=>{await openDB();await render()})();
+const originalRender=render;
+render=async function(){await originalRender();if(page==='form')await renderFormFields()}
+async function renderFormFields(){if(!currentId)return;let c=await getChar(currentId),f=document.getElementById('charForm');if(!f)return;for(let [k,v] of Object.entries(c)){if(f.elements[k]&&typeof v==='string')f.elements[k].value=v}f.elements.tags.value=(c.tags||[]).join(', ');showPreviews()}
+</script>
+</body></html>
