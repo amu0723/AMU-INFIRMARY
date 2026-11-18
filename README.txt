@@ -1,9 +1,20 @@
-AMU INFIRMARY v6 - iPhone / GitHub Pages
-1. Extract this ZIP in the iPhone Files app.
-2. Upload the new index.html to the existing AMU-INFIRMARY GitHub repository, replacing index.html.
-3. Commit the change. The public URL remains https://amu0723.github.io/AMU-INFIRMARY/
+AMU INFIRMARY v7
 
-IMPORTANT:
-- This update keeps the existing IndexedDB database name (amu_infirmary_v2) and store (data), so saved records should remain available in the same browser.
-- Do not clear website data or browser storage.
-- This ZIP does not publish itself; upload and commit index.html on GitHub.
+1. ZIPをiPhoneの「ファイル」アプリで解凍します。
+2. 中の index.html をGitHubリポジトリ AMU-INFIRMARY のルートへアップロードします。
+3. 既存の index.html を置き換えて Commit changes します。
+4. GitHub Pagesの公開URLを再読み込みします。
+
+今回の主な追加・変更:
+- 平成/Y2K風の水色・白・淡いピンクのデコ盛りデザイン
+- ドット文字、太いドット風ロゴ、PC風カーソルとキラキラ演出
+- 案内ウィンドウ風ホーム案内と流れる案内テキスト
+- 資料室のキャラクター別フォルダ・画像追加
+- 資料室に追加した画像をホームにも表示
+- 設定内に個人用ステッカーBOX（ホームのメイン欄には表示しません）
+
+保存について:
+- 既存のIndexedDB名 amu_infirmary_v2 / store data を維持しています。
+- 既存データを引き継ぐ設計です。
+- 画像・ステッカーもブラウザ内のIndexedDBへ保存されます。
+- ブラウザのサイトデータを削除すると保存内容が消える可能性があります。更新前に設定からバックアップを書き出すことをおすすめします。
